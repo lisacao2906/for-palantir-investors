@@ -1,0 +1,1 @@
+*In the completion of this project, I affirm that not violate any use of Alpha Vantage's API or the US Gov Spending Website*
