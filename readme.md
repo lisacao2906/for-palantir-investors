@@ -4,6 +4,7 @@ By Lisa Cao
 *About Dataset*
 - The processed Dataset can be found in 'final_output.csv'
 - This dataset contains PLTR's historical stock prices PLUS their contracts win. Each row represents each trading day, and if they had been granted any government contract that day, the value of the contract would also be reflected in 'Award Amount.' 
+- This dataset is the first of its kind, made possible thanks to web scraping and making API calls. It will provide great value to investors or PLTR stock researchers. 
 
 
 *Purpose of the Dataset*
