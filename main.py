@@ -3,7 +3,7 @@ import selenium
 import re
 from bs4 import BeautifulSoup
 import requests
-from config import API_KEY
+from config import API_KEY 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
@@ -33,7 +33,10 @@ def fetch_stock_prices():
   data = response.json()
   return data
  
+
 data = fetch_stock_prices()
+
+
 
 def process_stock_data(data):
     time_series = data.get("Time Series (Daily)", {})
@@ -81,7 +84,6 @@ def scrape_contracts():
    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
    WebDriverWait(driver, 20).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'award-result-generic-cell')))
    #WebDriverWait(driver, 20).until(EC.presence_of_all_elements_located((By.CLASS_NAME, 'award-result-generic-cell'))
-
    #class that contains all relevant elements we're looking for: 'award-result-generic-cell'
    contract_cells = driver.find_elements(By.CLASS_NAME, 'award-result-generic-cell') #retrieve all elements that have this class name
    # Print the number of contract cells found
@@ -90,7 +92,7 @@ def scrape_contracts():
       print(cell.text.strip())
    print(f"Number of contract cells found: {len(contract_cells)}") 
 
-#scrape_contracts()
+scrape_contracts()
 
 def merge_data(stock_data):
  contracts_df = pd.read_csv('contracts_data.csv')  # Replace with your actual filename
@@ -105,7 +107,9 @@ def merge_data(stock_data):
 contracts_df = pd.read_csv('contracts_data.csv')
 merged_df = merge_data(stock_data)
 
-"""
+
+
+""" code to clean data
 def clean_merged_df(merged_df):
    #compute delta of open and close
    #sort dates in descending manner 
